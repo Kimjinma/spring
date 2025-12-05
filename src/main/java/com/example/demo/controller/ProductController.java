@@ -28,7 +28,8 @@ public class ProductController {
     }
 
     @PostMapping(value = "/product")
-    public ProductDto createProduct(@RequestBody ProductDto productDto) {
+    public ProductDto createProduct(@Valid @RequestBody ProductDto productDto) {
+
         String productId = productDto.getProductId();
         String productName = productDto.getProductName();
         int productPrice = productDto.getProductPrice();
@@ -36,5 +37,6 @@ public class ProductController {
 
         return productService.saveProduct(productId,productName,productPrice,productStock);
     }
+
 }
 
