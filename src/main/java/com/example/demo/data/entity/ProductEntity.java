@@ -1,8 +1,6 @@
 package com.example.demo.data.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -12,14 +10,14 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Table(name = "product")
-public class ProductEntity {
+public class ProductEntity extends BaseEntity{
 
 
     @Id
-    String productId;
-    private String productName;
-    private int productPrice;
-    private int productStock;
+     String productId;
+     String productName;
+     Integer productPrice;
+     Integer productStock;
 
 
 }
